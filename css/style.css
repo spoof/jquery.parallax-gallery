@@ -114,6 +114,7 @@ html, body {
 	bottom: 10px;
 	left: 10px;;
 	width: 100%;
+	overflow-x: auto;
 }
 #gallery-thumbs-container {
 	display: block;
