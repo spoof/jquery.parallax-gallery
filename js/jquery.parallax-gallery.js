@@ -153,6 +153,8 @@
 			});
 			highlight($thumbs.eq(current));
 			$sliderWrapper.show();
+			$container.show();
+			navInit();
 		},
 		
 		addImage = function($thumb) {
@@ -197,43 +199,48 @@
 	
 		navInit = function() {
 			makeScrollable($thumbsWrapper,$thumbsContainer, 15);
+		},
+		clear = function() {
+			$thumbs = [];
+			loaded = 0;
+			total_images = 0;
+			current = 0;
+			touchOffset = undefined;
 		};
 	
 	$.fn.parallaxGallery = function(options) {
+		clear();
 		var opts = $.extend({}, $.fn.parallaxGallery.defaults, options);
-		if (!$container) {
-			$thumbs = $(this);
-			$container = $(opts.container);
-			$thumbsWrapper = $("#gallery-thumbs-wrapper");
-			$thumbsContainer = $("#gallery-thumbs-container");
-			$sliderWrapper = $('<div id="gallery-slider-wrapper"></div>"');
-			$imagesContainer = $('<div id="gallery-images-container"></div>"');
-			$backgrounds = $();
-			
-			$(opts.backgrounds).each(function (i, value) {
-				var $bg = $('<div class="gallery-bg"></div>').css({'background-image': 'url(' + value + ')'})
-				$sliderWrapper.append($bg);
-				$backgrounds.push($bg);
-			});
-			
-			$sliderWrapper.append($imagesContainer);
-			$container.append($sliderWrapper);
-			speed = opts.speed;
-			easing = opts.easing;
-			easingBg = opts.easingBg;
-		}
+		total_images = undefined;
+		$thumbs = $(this);
+		$container = $(opts.container);
+		$thumbsWrapper = $("#gallery-thumbs-wrapper");
+		$thumbsContainer = $("#gallery-thumbs-container");
+		$sliderWrapper = $('<div id="gallery-slider-wrapper"></div>"');
+		$imagesContainer = $('<div id="gallery-images-container"></div>"');
+		$backgrounds = $();
+		$(opts.backgrounds).each(function (i, value) {
+			var $bg = $('<div class="gallery-bg"></div>').css({'background-image': 'url(' + value + ')'})
+			$sliderWrapper.append($bg);
+			$backgrounds.push($bg);
+		});
+		
+		$sliderWrapper.append($imagesContainer);
+		$container.append($sliderWrapper);
+		speed = opts.speed;
+		easing = opts.easing;
+		easingBg = opts.easingBg;
+
 		total_images = this.length;
 		this.each(function() {
 			var $thumb	= $(this);
 			addImage($thumb);
 		});
-		navInit();
 		return this;
 	};
 	
 	$.fn.parallaxGallery.defaults = {
 		container		: "#gallery-container",
-//		backgrounds 	: ['images/bg1.png', 'images/bg2.png', 'images/bg3.png'],
 		backgrounds 	: ['images/bg1.png', 'images/bg2.png'],
 		speed			: 1000, //speed of each slide animation
 		easing			: 'jswing', //easing effect for the slide animation
