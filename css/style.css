@@ -1,0 +1,164 @@
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html, body { 
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: #eee;
+}
+#header {
+	padding: 20px;
+	height: 50px;
+}
+#header h1 {
+	color: #4c4c4c;
+	font: 2.5em/1.4 'Cantarell', Arial;
+	-moz-text-shadow: 0px 2px 0px #fff;
+	-webkit-text-shadow: 0px 2px 0px #fff;
+	text-shadow: 0px 2px 0px #fff;
+	
+}
+#gallery-container {
+	overflow: hidden;
+	min-height: 660px;
+	position: relative;
+}
+#gallery-slider-wrapper {
+	margin: 20px 0 100px;
+	display: none;
+	width: 100%;
+	height: 446px;
+	overflow: hidden;
+	position:relative;
+	border-top:7px solid #c1c1c1;
+	border-bottom:7px solid #c1c1c1;
+	-moz-box-shadow:0px 0px 7px #000;
+	-webkit-box-shadow:0px 0px 7px #000;
+	box-shadow:0px 0px 7px #000;
+}
+#gallery-images-container {
+	position:absolute;
+}
+#gallery-images-container div.image-wrapper {
+	float:left;
+	position:relative;
+}
+#gallery-images-container div.image-box {
+	width: 700px;
+	height: 400px;
+	margin: 15px auto;
+}
+#gallery-images-container div.image-wrapper img {
+	display:block;
+	-moz-box-shadow:0px 0px 7px #222;
+	-webkit-box-shadow:0px 0px 7px #222;
+	box-shadow:0px 0px 7px #222;
+	border: 8px solid transparent;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+}
+#gallery-thumbs-wrapper {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;;
+	width: 100%;
+}
+#gallery-thumbs-container {
+	display: block;
+	height: 130px;
+	width: 5000px;
+}
+#gallery-thumbs-container ul {
+	display: block;
+}
+#gallery-thumbs-container li {
+	display: block;
+	float: left;
+}
+#gallery-thumbs-container img {
+	opacity:0.7;
+	margin: 0 4px;
+	display: block;
+	width: 100px;
+	height: 100px;
+	border: 5px solid transparent;
+	-moz-box-shadow:1px 1px 7px #555;
+	-webkit-box-shadow:1px 1px 7px #555;
+	box-shadow:1px 1px 7px #555;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	cursor:pointer;
+}
+#gallery-thumbs-container a.selected img {
+	opacity:1;
+}
+div.gallery-bg {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	background-repeat:repeat;
+	background-position:top left;
+	background-color:transparent;
+	
+}
+.cursor-right {
+    cursor: url("../images/next.cur"), default;
+}
+.cursor-left {
+    cursor: url("../images/prev.cur"), default;
+}

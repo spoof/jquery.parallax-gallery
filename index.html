@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Parallax Gallery</title>
+	<meta name = "viewport" content = "user-scalable=no,width=device-width" />
+	<script src="js/jquery-1.5.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.parallax-gallery.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cantarell">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+	<div id="header"><h1>jQuery Parallax Gallery v0.1</h1></div>
+	<div id="gallery-container">
+		<div id="gallery-thumbs-wrapper">
+			<ul id="gallery-thumbs-container">
+				<li><a href="images/image1.jpg" class="thumb"><img src="images/thumb1.jpg"  width="100" height="100" alt=""/></a></li>
+				<li><a href="images/image2.jpg" class="thumb"><img src="images/thumb2.jpg"  width="100" height="100" alt=""/></a></li>
+				<li><a href="images/image3.jpg" class="thumb"><img src="images/thumb3.jpg"  width="100" height="100" alt=""/></a></li>
+				<li><a href="images/image4.jpg" class="thumb"><img src="images/thumb4.jpg"  width="100" height="100" alt=""/></a></li>
+				<li><a href="images/image5.jpg" class="thumb"><img src="images/thumb5.jpg"  width="100" height="100" alt=""/></a></li>
+				<li><a href="images/image6.jpg" class="thumb"><img src="images/thumb6.jpg"  width="100" height="100" alt=""/></a></li>
+				<li><a href="images/image7.jpg" class="thumb"><img src="images/thumb7.jpg"  width="100" height="100" alt=""/></a></li>
+				<li><a href="images/image1.jpg" class="thumb"><img src="images/thumb1.jpg"  width="100" height="100" alt=""/></a></li>
+				<li><a href="images/image2.jpg" class="thumb"><img src="images/thumb2.jpg"  width="100" height="100" alt=""/></a></li>
+				<li><a href="images/image3.jpg" class="thumb"><img src="images/thumb3.jpg"  width="100" height="100" alt=""/></a></li>
+				<li><a href="images/image4.jpg" class="thumb"><img src="images/thumb4.jpg"  width="100" height="100" alt=""/></a></li>
+				<li><a href="images/image5.jpg" class="thumb"><img src="images/thumb5.jpg"  width="100" height="100" alt=""/></a></li>
+				<li><a href="images/image6.jpg" class="thumb"><img src="images/thumb6.jpg"  width="100" height="100" alt=""/></a></li>
+				<li><a href="images/image7.jpg" class="thumb"><img src="images/thumb7.jpg"  width="100" height="100" alt=""/></a></li>
+			</ul>
+		  </div>
+	</div>
+	
+	<script type="text/javascript" charset="utf-8">
+	  $(document).ready(function () {
+		$(".thumb").parallaxGallery();
+	  });
+	</script>
+</body>
+</html>
